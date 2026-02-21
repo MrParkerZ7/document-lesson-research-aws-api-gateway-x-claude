@@ -127,10 +127,10 @@
         <mxCell id="wa1-s3" value="S3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#43a047;shadow=1;fontSize=9;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="240" y="480" width="45" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="wa1-arr1" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;fontSize=9;" edge="1" parent="1" source="wa1-client" target="wa1-apigw">
+        <mxCell id="wa1-arr1" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;fontSize=9;curved=1;flowAnimation=1;" edge="1" parent="1" source="wa1-client" target="wa1-apigw">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wa1-arr2" value="2 URL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;fontSize=9;" edge="1" parent="1" source="wa1-apigw" target="wa1-client">
+        <mxCell id="wa1-arr2" value="2 URL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;fontSize=9;curved=1;" edge="1" parent="1" source="wa1-apigw" target="wa1-client">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="153" y="470" />
@@ -138,7 +138,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="wa1-arr3" value="3 Upload" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;fontSize=9;" edge="1" parent="1" source="wa1-client" target="wa1-s3">
+        <mxCell id="wa1-arr3" value="3 Upload" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;fontSize=9;curved=1;flowAnimation=1;" edge="1" parent="1" source="wa1-client" target="wa1-s3">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="93" y="530" />
@@ -175,13 +175,13 @@
         <mxCell id="wa2-done" value="200&#xa;{result}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#43a047;shadow=1;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="585" y="475" width="45" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="wa2-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;" edge="1" parent="1" source="wa2-post" target="wa2-202">
+        <mxCell id="wa2-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="wa2-post" target="wa2-202">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wa2-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;dashed=1;" edge="1" parent="1" source="wa2-202" target="wa2-poll">
+        <mxCell id="wa2-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;dashed=1;curved=1;" edge="1" parent="1" source="wa2-202" target="wa2-poll">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wa2-arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;" edge="1" parent="1" source="wa2-poll" target="wa2-done">
+        <mxCell id="wa2-arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="wa2-poll" target="wa2-done">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wa2-desc" value="Async pattern with polling or WebSocket" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;" vertex="1" parent="1">

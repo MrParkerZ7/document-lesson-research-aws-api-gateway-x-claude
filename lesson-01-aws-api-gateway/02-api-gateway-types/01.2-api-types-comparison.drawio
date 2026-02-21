@@ -135,7 +135,7 @@
           <mxGeometry x="500" y="490" width="300" height="30" as="geometry" />
         </mxCell>
 
-        <mxCell id="decision-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;shadow=1;" vertex="1" parent="1">
+        <mxCell id="decision-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="530" width="1320" height="180" as="geometry" />
         </mxCell>
 
@@ -163,7 +163,7 @@
         </mxCell>
 
         <!-- Decision arrows -->
-        <mxCell id="darr1" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;" edge="1" parent="1" source="q1" target="rest-result">
+        <mxCell id="darr1" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;flowAnimation=1;" edge="1" parent="1" source="q1" target="rest-result">
           <mxGeometry relative="1" as="geometry">
             <mxPoint as="offset" />
             <Array as="points">
@@ -172,10 +172,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="darr2" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666666;curved=1;" edge="1" parent="1" source="q1" target="q2">
+        <mxCell id="darr2" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666666;curved=1;flowAnimation=1;" edge="1" parent="1" source="q1" target="q2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="darr3" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;" edge="1" parent="1" source="q2" target="rest-result">
+        <mxCell id="darr3" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;flowAnimation=1;" edge="1" parent="1" source="q2" target="rest-result">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="340" y="545" />
@@ -183,10 +183,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="darr4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666666;curved=1;" edge="1" parent="1" source="q2" target="q3">
+        <mxCell id="darr4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666666;curved=1;flowAnimation=1;" edge="1" parent="1" source="q2" target="q3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="darr5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;" edge="1" parent="1" source="q3" target="rest-result">
+        <mxCell id="darr5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;flowAnimation=1;" edge="1" parent="1" source="q3" target="rest-result">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="540" y="545" />
@@ -194,10 +194,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="darr6" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666666;curved=1;" edge="1" parent="1" source="q3" target="q4">
+        <mxCell id="darr6" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666666;curved=1;flowAnimation=1;" edge="1" parent="1" source="q3" target="q4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="darr7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff9800;curved=1;" edge="1" parent="1" source="q4" target="ws-result">
+        <mxCell id="darr7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff9800;curved=1;flowAnimation=1;" edge="1" parent="1" source="q4" target="ws-result">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="740" y="545" />
@@ -205,7 +205,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="darr8" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;" edge="1" parent="1" source="q4" target="http-result">
+        <mxCell id="darr8" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;flowAnimation=1;" edge="1" parent="1" source="q4" target="http-result">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="740" y="680" />

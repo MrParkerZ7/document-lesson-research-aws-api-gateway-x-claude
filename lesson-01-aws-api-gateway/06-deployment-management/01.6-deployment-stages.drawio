@@ -11,7 +11,7 @@
         </mxCell>
 
         <!-- API Definition Box -->
-        <mxCell id="api-def" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="api-def" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="80" width="280" height="200" as="geometry" />
         </mxCell>
         <mxCell id="api-def-title" value="API Definition" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -36,7 +36,7 @@
         </mxCell>
 
         <!-- Deployments -->
-        <mxCell id="deployments-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF9800;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="deployments-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF9800;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="460" y="80" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="deployments-title" value="Deployments" style="text;html=1;strokeColor=none;fillColor=#FF9800;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -56,7 +56,7 @@
         </mxCell>
 
         <!-- Stages -->
-        <mxCell id="stages-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#43A047;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="stages-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#43A047;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="700" y="80" width="350" height="200" as="geometry" />
         </mxCell>
         <mxCell id="stages-title" value="Stages (Environments)" style="text;html=1;strokeColor=none;fillColor=#43A047;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -94,7 +94,7 @@
         </mxCell>
 
         <!-- Arrows from deployments to stages -->
-        <mxCell id="arr-dep-stages" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43A047;curved=1;" edge="1" parent="1" source="deployments-box" target="stages-box">
+        <mxCell id="arr-dep-stages" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43A047;curved=1;flowAnimation=1;" edge="1" parent="1" source="deployments-box" target="stages-box">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -102,7 +102,7 @@
         <mxCell id="canary-title" value="Canary Deployment (Production)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#232F3E;" vertex="1" parent="1">
           <mxGeometry x="40" y="320" width="280" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="canary-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="canary-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="360" width="400" height="180" as="geometry" />
         </mxCell>
 
@@ -129,19 +129,19 @@
         </mxCell>
 
         <!-- Canary arrows -->
-        <mxCell id="arr-c1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;curved=1;" edge="1" parent="1" source="traffic-in" target="split">
+        <mxCell id="arr-c1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;curved=1;flowAnimation=1;" edge="1" parent="1" source="traffic-in" target="split">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="arr-c2" value="90%" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;" edge="1" parent="1" source="split" target="main-version">
+        <mxCell id="arr-c2" value="90%" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#43a047;curved=1;flowAnimation=1;" edge="1" parent="1" source="split" target="main-version">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="arr-c3" value="10%" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#f9a825;curved=1;" edge="1" parent="1" source="split" target="canary-version">
+        <mxCell id="arr-c3" value="10%" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#f9a825;curved=1;flowAnimation=1;" edge="1" parent="1" source="split" target="canary-version">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="arr-c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6c8ebf;curved=1;" edge="1" parent="1" source="main-version" target="backend-main">
+        <mxCell id="arr-c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6c8ebf;curved=1;flowAnimation=1;" edge="1" parent="1" source="main-version" target="backend-main">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="arr-c5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6c8ebf;curved=1;" edge="1" parent="1" source="canary-version" target="backend-canary">
+        <mxCell id="arr-c5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6c8ebf;curved=1;flowAnimation=1;" edge="1" parent="1" source="canary-version" target="backend-canary">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -149,7 +149,7 @@
         <mxCell id="domain-title" value="Custom Domain Mapping" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#232F3E;" vertex="1" parent="1">
           <mxGeometry x="500" y="320" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="domain-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#607D8B;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="domain-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#607D8B;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="480" y="360" width="280" height="180" as="geometry" />
         </mxCell>
 
@@ -171,7 +171,7 @@
         <mxCell id="vars-title" value="Stage Variables" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#232F3E;" vertex="1" parent="1">
           <mxGeometry x="820" y="320" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="vars-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="vars-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="800" y="360" width="250" height="180" as="geometry" />
         </mxCell>
 

@@ -11,7 +11,7 @@
         </mxCell>
 
         <!-- Request Validation -->
-        <mxCell id="validation-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="validation-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="80" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="validation-title" value="Request Validation" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -32,13 +32,13 @@
         <mxCell id="val-fail" value="✗ 400" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="230" y="165" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="val-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;" edge="1" parent="1" source="val-req" target="val-check">
+        <mxCell id="val-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="val-req" target="val-check">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="val-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#43a047;" edge="1" parent="1" source="val-check" target="val-pass">
+        <mxCell id="val-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#43a047;curved=1;flowAnimation=1;" edge="1" parent="1" source="val-check" target="val-pass">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="val-arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#c62828;" edge="1" parent="1" source="val-check" target="val-fail">
+        <mxCell id="val-arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#c62828;curved=1;flowAnimation=1;" edge="1" parent="1" source="val-check" target="val-fail">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -47,7 +47,7 @@
         </mxCell>
 
         <!-- Caching -->
-        <mxCell id="cache-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="cache-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="390" y="80" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="cache-title" value="Response Caching" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -69,13 +69,13 @@
         <mxCell id="cache-backend" value="Backend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="630" y="150" width="50" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="cache-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;" edge="1" parent="1" source="cache-client" target="cache-gw">
+        <mxCell id="cache-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="cache-client" target="cache-gw">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cache-arr2" value="HIT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2e7d32;dashed=1;" edge="1" parent="1" source="cache-gw" target="cache-store">
+        <mxCell id="cache-arr2" value="HIT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2e7d32;dashed=1;curved=1;" edge="1" parent="1" source="cache-gw" target="cache-store">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cache-arr3" value="MISS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;" edge="1" parent="1" source="cache-store" target="cache-backend">
+        <mxCell id="cache-arr3" value="MISS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="cache-store" target="cache-backend">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -84,7 +84,7 @@
         </mxCell>
 
         <!-- Throttling -->
-        <mxCell id="throttle-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="throttle-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="740" y="80" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="throttle-title" value="Throttling &amp; Rate Limiting" style="text;html=1;strokeColor=none;fillColor=#E65100;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -112,14 +112,14 @@
         </mxCell>
 
         <!-- Request/Response Transformation -->
-        <mxCell id="transform-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="transform-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="310" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="transform-title" value="Request/Response Transform" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="90" y="320" width="220" height="30" as="geometry" />
         </mxCell>
 
-        <mxCell id="vtl-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#7b1fa2;" vertex="1" parent="1">
+        <mxCell id="vtl-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#7b1fa2;" vertex="1" parent="1">
           <mxGeometry x="60" y="360" width="280" height="80" as="geometry" />
         </mxCell>
         <mxCell id="vtl-in" value="Client&#xa;JSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontSize=10;" vertex="1" parent="1">
@@ -131,10 +131,10 @@
         <mxCell id="vtl-out" value="Backend&#xa;Format" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="250" y="375" width="55" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="vtl-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;flowAnimation=1;" edge="1" parent="1" source="vtl-in" target="vtl-engine">
+        <mxCell id="vtl-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;flowAnimation=1;curved=1;" edge="1" parent="1" source="vtl-in" target="vtl-engine">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="vtl-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;flowAnimation=1;" edge="1" parent="1" source="vtl-engine" target="vtl-out">
+        <mxCell id="vtl-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;flowAnimation=1;curved=1;" edge="1" parent="1" source="vtl-engine" target="vtl-out">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -143,7 +143,7 @@
         </mxCell>
 
         <!-- CORS -->
-        <mxCell id="cors-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="cors-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="390" y="310" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="cors-title" value="CORS Configuration" style="text;html=1;strokeColor=none;fillColor=#C2185B;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -162,10 +162,10 @@
         <mxCell id="cors-headers" value="CORS&#xa;Headers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#43a047;shadow=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="590" y="380" width="55" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="cors-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;" edge="1" parent="1" source="cors-browser" target="cors-preflight">
+        <mxCell id="cors-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="cors-browser" target="cors-preflight">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cors-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#43a047;" edge="1" parent="1" source="cors-preflight" target="cors-headers">
+        <mxCell id="cors-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#43a047;curved=1;flowAnimation=1;" edge="1" parent="1" source="cors-preflight" target="cors-headers">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -174,7 +174,7 @@
         </mxCell>
 
         <!-- Binary Support -->
-        <mxCell id="binary-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="binary-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="740" y="310" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="binary-title" value="Binary Data &amp; Timeouts" style="text;html=1;strokeColor=none;fillColor=#455A64;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -200,7 +200,7 @@
         </mxCell>
 
         <!-- Stage Variables -->
-        <mxCell id="stage-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="stage-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="540" width="670" height="140" as="geometry" />
         </mxCell>
         <mxCell id="stage-title" value="Stage Variables" style="text;html=1;strokeColor=none;fillColor=#3949AB;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -233,7 +233,7 @@
         </mxCell>
 
         <!-- Feature Matrix -->
-        <mxCell id="matrix-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FF8F00;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="matrix-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FF8F00;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="740" y="540" width="320" height="140" as="geometry" />
         </mxCell>
         <mxCell id="matrix-title" value="Feature Availability" style="text;html=1;strokeColor=none;fillColor=#FF8F00;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">

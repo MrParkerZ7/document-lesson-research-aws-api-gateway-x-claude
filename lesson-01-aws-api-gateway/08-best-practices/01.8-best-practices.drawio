@@ -11,7 +11,7 @@
         </mxCell>
 
         <!-- API Design -->
-        <mxCell id="design-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="design-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="80" width="320" height="240" as="geometry" />
         </mxCell>
         <mxCell id="design-title" value="API Design" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -28,7 +28,7 @@
         </mxCell>
 
         <!-- Performance -->
-        <mxCell id="perf-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="perf-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="390" y="80" width="320" height="240" as="geometry" />
         </mxCell>
         <mxCell id="perf-title" value="Performance" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -45,7 +45,7 @@
         </mxCell>
 
         <!-- Security -->
-        <mxCell id="security-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="security-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="740" y="80" width="320" height="240" as="geometry" />
         </mxCell>
         <mxCell id="security-title" value="Security" style="text;html=1;strokeColor=none;fillColor=#C2185B;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -62,7 +62,7 @@
         </mxCell>
 
         <!-- Cost Optimization -->
-        <mxCell id="cost-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="cost-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="350" width="320" height="240" as="geometry" />
         </mxCell>
         <mxCell id="cost-title" value="Cost Optimization" style="text;html=1;strokeColor=none;fillColor=#E65100;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -79,7 +79,7 @@
         </mxCell>
 
         <!-- Error Handling -->
-        <mxCell id="error-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="error-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="390" y="350" width="320" height="240" as="geometry" />
         </mxCell>
         <mxCell id="error-title" value="Error Handling" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -96,7 +96,7 @@
         </mxCell>
 
         <!-- Operations -->
-        <mxCell id="ops-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="ops-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="740" y="350" width="320" height="240" as="geometry" />
         </mxCell>
         <mxCell id="ops-title" value="Operations" style="text;html=1;strokeColor=none;fillColor=#455A64;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -116,7 +116,7 @@
         <mxCell id="anti-title" value="Common Anti-Patterns to Avoid" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=16;fontColor=#C62828;" vertex="1" parent="1">
           <mxGeometry x="400" y="620" width="300" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="anti-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="anti-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="660" width="1020" height="100" as="geometry" />
         </mxCell>
 
@@ -143,7 +143,7 @@
         </mxCell>
 
         <!-- Quick Reference -->
-        <mxCell id="ref-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="ref-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="1080" y="80" width="280" height="510" as="geometry" />
         </mxCell>
         <mxCell id="ref-title" value="Quick Reference" style="text;html=1;strokeColor=none;fillColor=#3949AB;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">

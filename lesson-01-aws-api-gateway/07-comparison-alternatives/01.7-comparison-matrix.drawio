@@ -11,7 +11,7 @@
         </mxCell>
 
         <!-- API Gateway -->
-        <mxCell id="apigw-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FF8F00;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="apigw-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FF8F00;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="40" y="80" width="250" height="300" as="geometry" />
         </mxCell>
         <mxCell id="apigw-title" value="AWS API Gateway" style="text;html=1;strokeColor=none;fillColor=#FF8F00;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -31,7 +31,7 @@
         </mxCell>
 
         <!-- ALB -->
-        <mxCell id="alb-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="alb-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="320" y="80" width="250" height="300" as="geometry" />
         </mxCell>
         <mxCell id="alb-title" value="Application Load Balancer" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -51,7 +51,7 @@
         </mxCell>
 
         <!-- AppSync -->
-        <mxCell id="appsync-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="appsync-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="600" y="80" width="250" height="300" as="geometry" />
         </mxCell>
         <mxCell id="appsync-title" value="AWS AppSync" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -71,7 +71,7 @@
         </mxCell>
 
         <!-- Kong/Third-Party -->
-        <mxCell id="kong-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="kong-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="880" y="80" width="250" height="300" as="geometry" />
         </mxCell>
         <mxCell id="kong-title" value="Kong / Apigee / Others" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
@@ -140,42 +140,42 @@
         </mxCell>
 
         <!-- Arrows -->
-        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="start" target="q1">
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="start" target="q1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a2" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2e7d32;" edge="1" parent="1" source="q1" target="r-appsync">
+        <mxCell id="a2" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2e7d32;curved=1;flowAnimation=1;" edge="1" parent="1" source="q1" target="r-appsync">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a3" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q1" target="q2">
+        <mxCell id="a3" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="q1" target="q2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#1565c0;" edge="1" parent="1" source="q2" target="r-alb">
+        <mxCell id="a4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#1565c0;curved=1;flowAnimation=1;" edge="1" parent="1" source="q2" target="r-alb">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a5" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q2" target="q3">
+        <mxCell id="a5" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="q2" target="q3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a6" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;" edge="1" parent="1" source="q3" target="r-kong">
+        <mxCell id="a6" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;curved=1;flowAnimation=1;" edge="1" parent="1" source="q3" target="r-kong">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a7" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q3" target="q4">
+        <mxCell id="a7" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="q3" target="q4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a8" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#1565c0;" edge="1" parent="1" source="q4" target="r-alb2">
+        <mxCell id="a8" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#1565c0;curved=1;flowAnimation=1;" edge="1" parent="1" source="q4" target="r-alb2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a9" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q4" target="q5">
+        <mxCell id="a9" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="q4" target="q5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a10" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff8f00;" edge="1" parent="1" source="q5" target="r-rest">
+        <mxCell id="a10" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff8f00;curved=1;flowAnimation=1;" edge="1" parent="1" source="q5" target="r-rest">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a11" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff8f00;" edge="1" parent="1" source="q5" target="r-http">
+        <mxCell id="a11" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff8f00;curved=1;flowAnimation=1;" edge="1" parent="1" source="q5" target="r-http">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
         <!-- Cost comparison -->
-        <mxCell id="cost-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#666;shadow=1;" vertex="1" parent="1">
+        <mxCell id="cost-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#666;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="950" y="450" width="200" height="140" as="geometry" />
         </mxCell>
         <mxCell id="cost-title" value="Cost Comparison (per M req)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
