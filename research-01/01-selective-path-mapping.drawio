@@ -1,0 +1,217 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:00:00.000Z" agent="Claude" version="22.1.0">
+  <diagram name="Selective Path Mapping" id="selective-path-mapping">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Research: API Gateway → ALB Selective Path Mapping" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Question: Can I expose only specific ALB paths without exposing all subpaths?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="55" width="600" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Answer Banner -->
+        <mxCell id="answer-box" value="✓ YES - Use specific routes, NOT {proxy+}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;strokeWidth=3;fontSize=16;fontStyle=1;fontColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="450" y="90" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Internet -->
+        <mxCell id="internet" value="🌐 Internet" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="150" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow to API GW -->
+        <mxCell id="arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#1565C0;curved=1;flowAnimation=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="200" as="sourcePoint" />
+            <mxPoint x="600" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- API Gateway Box -->
+        <mxCell id="apigw-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF6F00;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="240" width="1000" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-title" value="API GATEWAY (HTTP API)" style="text;html=1;strokeColor=none;fillColor=#FF6F00;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="250" width="240" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Exposed Routes Section -->
+        <mxCell id="exposed-section" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="290" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="exposed-label" value="✓ EXPOSED ROUTES" style="text;html=1;strokeColor=none;fillColor=#43A047;align=center;verticalAlign=middle;fontStyle=1;fontSize=12;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="298" width="160" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="route1" value="GET /document" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#43A047;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="330" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="route2" value="POST /document" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#43A047;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="368" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="route3" value="GET /document/{id}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#43A047;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="330" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="route4" value="DELETE /document/{id}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#43A047;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="368" width="160" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- NOT Exposed Section -->
+        <mxCell id="notexposed-section" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#E53935;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="290" width="560" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="notexposed-label" value="✗ NOT EXPOSED (Returns 404)" style="text;html=1;strokeColor=none;fillColor=#E53935;align=center;verticalAlign=middle;fontStyle=1;fontSize=12;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="298" width="200" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="noroute1" value="/admin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E53935;strokeWidth=1;fontSize=11;fontStyle=4;fontColor=#999;" vertex="1" parent="1">
+          <mxGeometry x="540" y="335" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="noroute2" value="/internal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E53935;strokeWidth=1;fontSize=11;fontStyle=4;fontColor=#999;" vertex="1" parent="1">
+          <mxGeometry x="650" y="335" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="noroute3" value="/health" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E53935;strokeWidth=1;fontSize=11;fontStyle=4;fontColor=#999;" vertex="1" parent="1">
+          <mxGeometry x="760" y="335" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="noroute4" value="/metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E53935;strokeWidth=1;fontSize=11;fontStyle=4;fontColor=#999;" vertex="1" parent="1">
+          <mxGeometry x="870" y="335" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="noroute5" value="/{proxy+}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;strokeWidth=2;fontSize=11;fontStyle=5;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="980" y="335" width="80" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="noroute-note" value="⚠ Don't use greedy path!" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#E53935;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="950" y="365" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow Allowed -->
+        <mxCell id="arr-allowed" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#43A047;curved=1;flowAnimation=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="420" as="sourcePoint" />
+            <mxPoint x="310" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr-allowed-label" value="VPC Link" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#43A047;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="440" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow Blocked -->
+        <mxCell id="arr-blocked" value="" style="endArrow=none;html=1;strokeWidth=3;strokeColor=#E53935;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="420" as="sourcePoint" />
+            <mxPoint x="800" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="blocked-x" value="✗" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontColor=#E53935;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="785" y="455" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- VPC Box -->
+        <mxCell id="vpc-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3F51B5;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="480" width="1000" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc-title" value="VPC (Private)" style="text;html=1;strokeColor=none;fillColor=#3F51B5;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="490" width="160" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ALB Box -->
+        <mxCell id="alb-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFA000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="140" y="530" width="920" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-title" value="ALB: some.alb.com" style="text;html=1;strokeColor=none;fillColor=#FFA000;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="540" width="200" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ALB Paths - Accessible -->
+        <mxCell id="alb-path1" value="/api/v1/document" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="580" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-path2" value="/api/v1/document/{id}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="580" width="170" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-acc-label" value="✓ Reachable via API Gateway" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#43A047;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="620" width="180" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ALB Paths - Protected -->
+        <mxCell id="alb-int1" value="/api/v1/admin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="580" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-int2" value="/api/v1/internal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="580" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-int3" value="/health" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="580" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-int4" value="/metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="580" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-int-label" value="✗ Protected (no route in API Gateway)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#E53935;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="620" width="220" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Path Mapping Box -->
+        <mxCell id="mapping-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="700" width="1000" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mapping-title" value="Path Rewriting (overwrite:path)" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="710" width="260" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="map1" value="GET /document → /api/v1/document" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7B1FA2;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="140" y="750" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="map2" value="GET /document/{id} → /api/v1/document/{id}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7B1FA2;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="750" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="map3" value="Clean API path → Backend path" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7B1FA2;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="730" y="750" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#9E9E9E;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="820" width="1000" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="KEY:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="120" y="830" width="50" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="170" y="835" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1-text" value="Exposed" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="195" y="830" width="70" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="280" y="835" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2-text" value="Protected" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="305" y="830" width="70" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg3" value="→" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontColor=#43A047;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="830" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3-text" value="Traffic Flow" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="430" y="830" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg4" value="✗" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontColor=#E53935;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="830" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4-text" value="Blocked" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="560" y="830" width="60" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg5" value="HTTP API recommended for ALB (direct support)" style="text;html=1;strokeColor=none;fillColor=#E3F2FD;align=center;verticalAlign=middle;fontSize=11;fontColor=#1565C0;fontStyle=1;rounded=1;strokeColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="830" width="300" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
