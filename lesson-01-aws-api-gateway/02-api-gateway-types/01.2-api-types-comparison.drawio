@@ -11,7 +11,7 @@
         </mxCell>
 
         <!-- REST API -->
-        <mxCell id="rest-api-group" value="REST API (v1)" style="swimlane;horizontal=1;startSize=35;fillColor=#E3F2FD;strokeColor=#1976D2;rounded=1;shadow=1;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+        <mxCell id="rest-api-group" value="REST API (v1)" style="swimlane;horizontal=1;startSize=35;fillColor=#E3F2FD;strokeColor=#1976D2;shadow=1;fontStyle=1;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="40" y="80" width="400" height="380" as="geometry" />
         </mxCell>
         <mxCell id="rest-price" value="$3.50 / million requests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#e53935;shadow=1;fontStyle=1;" vertex="1" parent="rest-api-group">
@@ -51,7 +51,7 @@
         </mxCell>
 
         <!-- HTTP API -->
-        <mxCell id="http-api-group" value="HTTP API (v2)" style="swimlane;horizontal=1;startSize=35;fillColor=#E8F5E9;strokeColor=#43A047;rounded=1;shadow=1;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+        <mxCell id="http-api-group" value="HTTP API (v2)" style="swimlane;horizontal=1;startSize=35;fillColor=#E8F5E9;strokeColor=#43A047;shadow=1;fontStyle=1;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="500" y="80" width="400" height="380" as="geometry" />
         </mxCell>
         <mxCell id="http-price" value="$1.00 / million requests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#43a047;shadow=1;fontStyle=1;" vertex="1" parent="http-api-group">
@@ -91,7 +91,7 @@
         </mxCell>
 
         <!-- WebSocket API -->
-        <mxCell id="ws-api-group" value="WebSocket API" style="swimlane;horizontal=1;startSize=35;fillColor=#FFF3E0;strokeColor=#FF9800;rounded=1;shadow=1;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+        <mxCell id="ws-api-group" value="WebSocket API" style="swimlane;horizontal=1;startSize=35;fillColor=#FFF3E0;strokeColor=#FF9800;shadow=1;fontStyle=1;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="960" y="80" width="400" height="380" as="geometry" />
         </mxCell>
         <mxCell id="ws-price" value="$1.00 / million messages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff9800;shadow=1;fontStyle=1;" vertex="1" parent="ws-api-group">

@@ -57,6 +57,7 @@ lesson-XX-topic-name/
 - Enable shadows on shapes (`shadow=1`)
 - Use curved arrows where appropriate (`curved=1`)
 - Add flow animation to unidirectional arrows only (`flowAnimation=1`)
+- **Do NOT use rounded corners on swimlane/frame groups** - remove `rounded=1` from swimlane styles
 - Use consistent color schemes:
   - Blue: Services/APIs
   - Green: Data/Storage
