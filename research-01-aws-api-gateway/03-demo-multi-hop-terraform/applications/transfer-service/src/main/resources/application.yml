@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: transfer-service
+
+server:
+  port: 8080
+  # Context path is set via environment variable in production
+  # SERVER_SERVLET_CONTEXT_PATH=/transfer-svc
+  servlet:
+    context-path: ${SERVER_SERVLET_CONTEXT_PATH:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.demo: DEBUG
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

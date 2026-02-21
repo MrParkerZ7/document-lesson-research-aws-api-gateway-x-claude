@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # ============================================================================
+  # NGINX - Simulates ALB path-based routing locally
+  # ============================================================================
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - account-service
+      - transfer-service
+    networks:
+      - demo-network
+
+  # ============================================================================
+  # Account Service
+  # In production: receives /account-svc/* from ALB
+  # Locally: NGINX routes /account-svc/* to this service
+  # ============================================================================
+  account-service:
+    build:
+      context: ../applications
+      dockerfile: account-service/Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+      - SERVER_PORT=8080
+      - SERVER_SERVLET_CONTEXT_PATH=/account-svc
+    ports:
+      - "8081:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/account-svc/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    networks:
+      - demo-network
+
+  # ============================================================================
+  # Transfer Service
+  # In production: receives /transfer-svc/* from ALB
+  # Locally: NGINX routes /transfer-svc/* to this service
+  # ============================================================================
+  transfer-service:
+    build:
+      context: ../applications
+      dockerfile: transfer-service/Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+      - SERVER_PORT=8080
+      - SERVER_SERVLET_CONTEXT_PATH=/transfer-svc
+    ports:
+      - "8082:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/transfer-svc/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    driver: bridge

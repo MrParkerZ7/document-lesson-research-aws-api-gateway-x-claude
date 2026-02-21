@@ -1,0 +1,453 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:00:00.000Z" agent="Claude" version="22.1.0">
+  <diagram name="Multi-Hop Path Mapping" id="multi-hop-path-mapping">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1400" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title Section -->
+        <mxCell id="title" value="Multi-Hop Path Mapping: Transit Gateway → API Gateway → ALB → ECS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1000" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Path Transformation at Each Layer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="55" width="600" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Client Request -->
+        <mxCell id="client-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="client-icon" value="🌐 Client Request" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="108" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="client-url" value="https://tgw.example.com/payment-gateway/accounts/123" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;fontSize=11;fontFamily=Courier New;rounded=1;strokeColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="138" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow to Transit Gateway -->
+        <mxCell id="arr-to-tgw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#1565C0;curved=1;flowAnimation=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" edge="1" parent="1" source="client-box" target="tgw-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LAYER 1: TRANSIT GATEWAY ==================== -->
+        <mxCell id="tgw-box" value="" style="swimlane;startSize=30;fillColor=#FCE4EC;strokeColor=#C2185B;shadow=1;strokeWidth=2;swimlaneFillColor=#FCE4EC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="220" width="700" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="tgw-title" value="LAYER 1: TRANSIT GATEWAY (tgw.example.com)" style="text;html=1;strokeColor=none;fillColor=#C2185B;align=center;verticalAlign=middle;fontStyle=1;fontSize=13;fontColor=#ffffff;rounded=1;" vertex="1" parent="tgw-box">
+          <mxGeometry x="150" y="5" width="400" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- TGW Input -->
+        <mxCell id="tgw-in-label" value="RECEIVES:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#C2185B;" vertex="1" parent="tgw-box">
+          <mxGeometry x="20" y="40" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tgw-in-path" value="/payment-gateway/accounts/123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#C2185B;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="tgw-box">
+          <mxGeometry x="20" y="62" width="260" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- TGW Route Config -->
+        <mxCell id="tgw-route-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;dashed=1;strokeWidth=2;" vertex="1" parent="tgw-box">
+          <mxGeometry x="300" y="40" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="tgw-route-title" value="Route Rule:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#F57F17;" vertex="1" parent="tgw-box">
+          <mxGeometry x="340" y="42" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="tgw-route-rule" value="/payment-gateway/* → API GW" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontFamily=Courier New;fontColor=#424242;" vertex="1" parent="tgw-box">
+          <mxGeometry x="305" y="60" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="tgw-route-action" value="Action: STRIP PREFIX" style="text;html=1;strokeColor=none;fillColor=#FFECB3;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#E65100;rounded=1;" vertex="1" parent="tgw-box">
+          <mxGeometry x="325" y="78" width="130" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- TGW Output -->
+        <mxCell id="tgw-out-label" value="FORWARDS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#43A047;" vertex="1" parent="tgw-box">
+          <mxGeometry x="500" y="40" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tgw-out-path" value="/accounts/123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="tgw-box">
+          <mxGeometry x="500" y="62" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tgw-stripped" value="✓ /payment-gateway stripped" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#43A047;fontStyle=2;" vertex="1" parent="tgw-box">
+          <mxGeometry x="500" y="95" width="180" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow TGW to APIGW -->
+        <mxCell id="arr-tgw-apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#7B1FA2;curved=1;flowAnimation=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="370" as="sourcePoint" />
+            <mxPoint x="400" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr-tgw-apigw-label" value="To: apigw.internal.com" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#7B1FA2;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="380" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LAYER 2: API GATEWAY ==================== -->
+        <mxCell id="apigw-box" value="" style="swimlane;startSize=30;fillColor=#FFF3E0;strokeColor=#FF6F00;shadow=1;strokeWidth=2;swimlaneFillColor=#FFF3E0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="410" width="700" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-title" value="LAYER 2: API GATEWAY - HTTP API (apigw.internal.com)" style="text;html=1;strokeColor=none;fillColor=#FF6F00;align=center;verticalAlign=middle;fontStyle=1;fontSize=13;fontColor=#ffffff;rounded=1;" vertex="1" parent="apigw-box">
+          <mxGeometry x="130" y="5" width="440" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- APIGW Input -->
+        <mxCell id="apigw-in-label" value="RECEIVES:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#FF6F00;" vertex="1" parent="apigw-box">
+          <mxGeometry x="20" y="40" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-in-path" value="/accounts/123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#FF6F00;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="apigw-box">
+          <mxGeometry x="20" y="62" width="150" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- APIGW Route Config -->
+        <mxCell id="apigw-route-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;dashed=1;strokeWidth=2;" vertex="1" parent="apigw-box">
+          <mxGeometry x="190" y="38" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-route-title" value="Route Configuration:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#7B1FA2;" vertex="1" parent="apigw-box">
+          <mxGeometry x="280" y="42" width="120" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-route-key" value="RouteKey: GET /accounts/{accountId}" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontFamily=Courier New;fontColor=#424242;" vertex="1" parent="apigw-box">
+          <mxGeometry x="200" y="62" width="280" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-route-int" value="Integration: HTTP_PROXY → ALB VPC Link" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontFamily=Courier New;fontColor=#424242;" vertex="1" parent="apigw-box">
+          <mxGeometry x="200" y="80" width="280" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-route-rewrite" value="overwrite:path: /account-svc/api/v1/accounts/${id}" style="text;html=1;strokeColor=none;fillColor=#FFECB3;align=left;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontColor=#E65100;fontStyle=1;rounded=1;" vertex="1" parent="apigw-box">
+          <mxGeometry x="200" y="100" width="280" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- APIGW Output -->
+        <mxCell id="apigw-out-label" value="FORWARDS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#43A047;" vertex="1" parent="apigw-box">
+          <mxGeometry x="510" y="40" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-out-path" value="/account-svc/api/v1/accounts/123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="apigw-box">
+          <mxGeometry x="510" y="62" width="180" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-added" value="✓ Added /account-svc/api/v1 prefix" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#43A047;fontStyle=2;" vertex="1" parent="apigw-box">
+          <mxGeometry x="510" y="100" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-note" value="(for ALB routing)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#666666;fontStyle=2;" vertex="1" parent="apigw-box">
+          <mxGeometry x="510" y="115" width="100" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow APIGW to ALB -->
+        <mxCell id="arr-apigw-alb" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#0277BD;curved=1;flowAnimation=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="580" as="sourcePoint" />
+            <mxPoint x="400" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr-apigw-alb-label" value="VPC Link → alb.internal.com" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#0277BD;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="588" width="160" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LAYER 3: ALB ==================== -->
+        <mxCell id="alb-box" value="" style="swimlane;startSize=30;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;swimlaneFillColor=#E3F2FD;" vertex="1" parent="1">
+          <mxGeometry x="50" y="620" width="700" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-title" value="LAYER 3: APPLICATION LOAD BALANCER (alb.internal.com)" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=13;fontColor=#ffffff;rounded=1;" vertex="1" parent="alb-box">
+          <mxGeometry x="130" y="5" width="440" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ALB Input -->
+        <mxCell id="alb-in-label" value="RECEIVES:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#1565C0;" vertex="1" parent="alb-box">
+          <mxGeometry x="20" y="40" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-in-path" value="/account-svc/api/v1/accounts/123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565C0;fontSize=11;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="alb-box">
+          <mxGeometry x="20" y="62" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ALB Route Config -->
+        <mxCell id="alb-route-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3E5FC;strokeColor=#0288D1;dashed=1;strokeWidth=2;" vertex="1" parent="alb-box">
+          <mxGeometry x="260" y="38" width="230" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-route-title" value="Listener Rules:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#0277BD;" vertex="1" parent="alb-box">
+          <mxGeometry x="325" y="42" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-rule1" value="P1: /account-svc/*  → account-tg" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontColor=#424242;" vertex="1" parent="alb-box">
+          <mxGeometry x="268" y="62" width="210" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-rule2" value="P2: /transfer-svc/* → transfer-tg" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontColor=#424242;" vertex="1" parent="alb-box">
+          <mxGeometry x="268" y="78" width="210" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-rule3" value="P3: /card-svc/*     → card-tg" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontColor=#424242;" vertex="1" parent="alb-box">
+          <mxGeometry x="268" y="94" width="210" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-rule-default" value="Default: 404" style="text;html=1;strokeColor=none;fillColor=#FFCDD2;align=left;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontColor=#C62828;rounded=1;" vertex="1" parent="alb-box">
+          <mxGeometry x="268" y="112" width="90" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- ALB Output -->
+        <mxCell id="alb-out-label" value="FORWARDS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#43A047;" vertex="1" parent="alb-box">
+          <mxGeometry x="510" y="40" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-out-path" value="/api/v1/accounts/123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=12;fontFamily=Courier New;fontStyle=1;" vertex="1" parent="alb-box">
+          <mxGeometry x="510" y="62" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-stripped" value="✓ /account-svc stripped" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#43A047;fontStyle=2;" vertex="1" parent="alb-box">
+          <mxGeometry x="510" y="95" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-option" value="(via path rewrite rule)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#666666;fontStyle=2;" vertex="1" parent="alb-box">
+          <mxGeometry x="510" y="110" width="120" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow ALB to ECS -->
+        <mxCell id="arr-alb-ecs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#43A047;curved=1;flowAnimation=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="790" as="sourcePoint" />
+            <mxPoint x="400" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr-alb-ecs-label" value="Target Group → ECS Task" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#43A047;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="798" width="150" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LAYER 4: ECS FARGATE ==================== -->
+        <mxCell id="ecs-box" value="" style="swimlane;startSize=30;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;swimlaneFillColor=#E8F5E9;" vertex="1" parent="1">
+          <mxGeometry x="50" y="830" width="700" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ecs-title" value="LAYER 4: ECS FARGATE (Account Service Container)" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontStyle=1;fontSize=13;fontColor=#ffffff;rounded=1;" vertex="1" parent="ecs-box">
+          <mxGeometry x="150" y="5" width="400" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ECS Receives -->
+        <mxCell id="ecs-in-label" value="APPLICATION RECEIVES:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#2E7D32;" vertex="1" parent="ecs-box">
+          <mxGeometry x="20" y="40" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ecs-in-path" value="GET /api/v1/accounts/123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#2E7D32;fontSize=14;fontFamily=Courier New;fontStyle=1;strokeWidth=2;" vertex="1" parent="ecs-box">
+          <mxGeometry x="20" y="65" width="250" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ECS Handler -->
+        <mxCell id="ecs-handler-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2E7D32;dashed=1;strokeWidth=2;" vertex="1" parent="ecs-box">
+          <mxGeometry x="300" y="40" width="280" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="ecs-handler-title" value="Spring Boot Controller:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#2E7D32;" vertex="1" parent="ecs-box">
+          <mxGeometry x="310" y="45" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="ecs-handler-code" value="@GetMapping(&quot;/api/v1/accounts/{id}&quot;)&#xa;public Account getAccount(@PathVariable id) {&#xa;    return accountService.findById(id);&#xa;}" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#424242;whiteSpace=wrap;" vertex="1" parent="ecs-box">
+          <mxGeometry x="310" y="63" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Success indicator -->
+        <mxCell id="ecs-success" value="✓ Clean API path - No infrastructure coupling!" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=12;fontStyle=1;fontColor=#2E7D32;strokeWidth=2;" vertex="1" parent="ecs-box">
+          <mxGeometry x="170" y="115" width="360" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== RIGHT SIDE: PATH TRANSFORMATION SUMMARY ==================== -->
+        <mxCell id="summary-box" value="" style="swimlane;startSize=30;fillColor=#FAFAFA;strokeColor=#616161;shadow=1;strokeWidth=2;swimlaneFillColor=#FAFAFA;" vertex="1" parent="1">
+          <mxGeometry x="800" y="220" width="750" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="summary-title" value="PATH TRANSFORMATION SUMMARY" style="text;html=1;strokeColor=none;fillColor=#616161;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="220" y="5" width="310" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Request Flow Table -->
+        <mxCell id="table-header" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#424242;strokeColor=#212121;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="45" width="710" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="th-layer" value="Layer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="48" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="th-receives" value="Receives" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="summary-box">
+          <mxGeometry x="140" y="48" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="th-action" value="Action" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="summary-box">
+          <mxGeometry x="340" y="48" width="130" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="th-forwards" value="Forwards" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="summary-box">
+          <mxGeometry x="470" y="48" width="260" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: Transit GW -->
+        <mxCell id="row1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="75" width="710" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-layer" value="Transit Gateway" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#C2185B;" vertex="1" parent="summary-box">
+          <mxGeometry x="25" y="82" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-receives" value="/payment-gateway/accounts/123" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontFamily=Courier New;" vertex="1" parent="summary-box">
+          <mxGeometry x="140" y="82" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-action" value="Strip /payment-gateway" style="text;html=1;strokeColor=none;fillColor=#FFECB3;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#E65100;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="345" y="85" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-forwards" value="/accounts/123" style="text;html=1;strokeColor=none;fillColor=#C8E6C9;align=center;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontStyle=1;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="500" y="85" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: API Gateway -->
+        <mxCell id="row2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF6F00;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="115" width="710" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-layer" value="API Gateway" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#FF6F00;" vertex="1" parent="summary-box">
+          <mxGeometry x="25" y="122" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-receives" value="/accounts/123" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontFamily=Courier New;" vertex="1" parent="summary-box">
+          <mxGeometry x="140" y="122" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-action" value="Add /account-svc/api/v1" style="text;html=1;strokeColor=none;fillColor=#FFECB3;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#E65100;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="345" y="125" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-forwards" value="/account-svc/api/v1/accounts/123" style="text;html=1;strokeColor=none;fillColor=#C8E6C9;align=center;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontStyle=1;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="500" y="125" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: ALB -->
+        <mxCell id="row3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="155" width="710" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-layer" value="ALB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#1565C0;" vertex="1" parent="summary-box">
+          <mxGeometry x="25" y="162" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-receives" value="/account-svc/api/v1/accounts/123" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontFamily=Courier New;" vertex="1" parent="summary-box">
+          <mxGeometry x="140" y="162" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-action" value="Route + Strip /account-svc" style="text;html=1;strokeColor=none;fillColor=#FFECB3;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#E65100;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="345" y="165" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-forwards" value="/api/v1/accounts/123" style="text;html=1;strokeColor=none;fillColor=#C8E6C9;align=center;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontStyle=1;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="500" y="165" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Row 4: ECS -->
+        <mxCell id="row4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="195" width="710" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-layer" value="ECS Fargate" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#2E7D32;" vertex="1" parent="summary-box">
+          <mxGeometry x="25" y="202" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-receives" value="/api/v1/accounts/123" style="text;html=1;strokeColor=none;fillColor=#A5D6A7;align=center;verticalAlign=middle;fontSize=10;fontFamily=Courier New;fontStyle=1;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="140" y="205" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-action" value="Handle Request" style="text;html=1;strokeColor=none;fillColor=#C8E6C9;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#2E7D32;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="345" y="205" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-forwards" value="{ &quot;accountId&quot;: &quot;123&quot;, ... }" style="text;html=1;strokeColor=none;fillColor=#BBDEFB;align=center;verticalAlign=middle;fontSize=9;fontFamily=Courier New;fontStyle=1;rounded=1;" vertex="1" parent="summary-box">
+          <mxGeometry x="500" y="205" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Key Benefits -->
+        <mxCell id="benefits-title" value="KEY BENEFITS OF THIS APPROACH:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#424242;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="255" width="250" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="benefit1" value="✓ Application receives clean REST paths" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="285" width="340" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit2" value="✓ No infrastructure coupling in app code" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="318" width="340" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit3" value="✓ Each layer manages its own routing concern" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="351" width="340" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit4" value="✓ Easy to add/remove services without app changes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="20" y="384" width="340" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="benefit5" value="✓ Path prefix used only for routing decisions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="380" y="285" width="340" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit6" value="✓ Teams can work independently" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="380" y="318" width="340" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit7" value="✓ Consistent API contract regardless of infra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="380" y="351" width="340" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit8" value="✓ Easier testing with local/mock environments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="summary-box">
+          <mxGeometry x="380" y="384" width="340" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== BOTTOM: CONFLICT RESOLUTION ==================== -->
+        <mxCell id="conflict-box" value="" style="swimlane;startSize=30;fillColor=#FFF8E1;strokeColor=#FF8F00;shadow=1;strokeWidth=2;swimlaneFillColor=#FFF8E1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="700" width="750" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="conflict-title" value="RESOLVING THE TEAM CONFLICT" style="text;html=1;strokeColor=none;fillColor=#FF8F00;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="conflict-box">
+          <mxGeometry x="225" y="5" width="300" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Infra Team View -->
+        <mxCell id="infra-view" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#E64A19;strokeWidth=2;" vertex="1" parent="conflict-box">
+          <mxGeometry x="20" y="45" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-title" value="INFRA TEAM REQUIREMENT" style="text;html=1;strokeColor=none;fillColor=#E64A19;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#ffffff;rounded=1;" vertex="1" parent="conflict-box">
+          <mxGeometry x="105" y="50" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="infra-req" value="&quot;Each layer needs path prefix for:&#xa;• Routing to correct backend&#xa;• Traffic identification&#xa;• Logging and tracing&#xa;• Security rules&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#BF360C;whiteSpace=wrap;" vertex="1" parent="conflict-box">
+          <mxGeometry x="30" y="75" width="330" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Dev Team View -->
+        <mxCell id="dev-view" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C5CAE9;strokeColor=#303F9F;strokeWidth=2;" vertex="1" parent="conflict-box">
+          <mxGeometry x="380" y="45" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-title" value="DEV TEAM REQUIREMENT" style="text;html=1;strokeColor=none;fillColor=#303F9F;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#ffffff;rounded=1;" vertex="1" parent="conflict-box">
+          <mxGeometry x="465" y="50" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-req" value="&quot;Application should receive clean paths:&#xa;• GET /api/v1/accounts/{id}&#xa;• No infrastructure knowledge needed&#xa;• Same code works locally and in prod&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#1A237E;whiteSpace=wrap;" vertex="1" parent="conflict-box">
+          <mxGeometry x="390" y="75" width="330" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Solution -->
+        <mxCell id="solution-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;strokeWidth=3;" vertex="1" parent="conflict-box">
+          <mxGeometry x="20" y="170" width="710" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="solution-title" value="✓ SOLUTION: Both requirements met!" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#ffffff;rounded=1;" vertex="1" parent="conflict-box">
+          <mxGeometry x="240" y="178" width="270" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="solution-text" value="• Infra adds path prefixes for ROUTING only&#xa;• Each layer strips its prefix before forwarding&#xa;• Application receives clean REST paths&#xa;• Path prefix never leaks into application layer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#1B5E20;whiteSpace=wrap;" vertex="1" parent="conflict-box">
+          <mxGeometry x="30" y="210" width="690" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#9E9E9E;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1000" width="700" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGEND:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1010" width="60" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-strip" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#F9A825;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1015" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-strip-text" value="Path Transform" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="155" y="1010" width="90" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-out" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;" vertex="1" parent="1">
+          <mxGeometry x="260" y="1015" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-out-text" value="Output Path" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="285" y="1010" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-flow" value="→" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontColor=#43A047;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1010" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-flow-text" value="Traffic Flow" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1010" width="70" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-tgw" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1015" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-tgw-text" value="Transit GW" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="525" y="1010" width="70" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-apigw" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF6F00;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1015" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-apigw-text" value="API GW" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="625" y="1010" width="55" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-alb" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1015" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-alb-text" value="ALB / ECS" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="715" y="1010" width="60" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
