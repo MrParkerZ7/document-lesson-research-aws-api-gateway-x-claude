@@ -30,6 +30,7 @@ By the end of this lesson, you will be able to:
 | 08 | [Best Practices](./08-best-practices/README.md) | Design patterns, performance optimization, cost management |
 | 09 | [Limitations & Considerations](./09-limitations-considerations/README.md) | What API Gateway doesn't support and workarounds |
 | 10 | [Resource Mapping](./10-resource-mapping/README.md) | Deep dive into resource types, Lambda, ALB, VPC Links, path variables |
+| 11 | [Selective Path Exposure](./11-selective-path-exposure/README.md) | Expose specific ALB paths without exposing entire backend |
 
 ## Quick Reference
 
