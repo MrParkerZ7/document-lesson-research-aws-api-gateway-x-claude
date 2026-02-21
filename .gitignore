@@ -1,0 +1,19 @@
+# Claude Code local settings
+.claude/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
