@@ -1,0 +1,181 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:00:00.000Z" agent="Claude" version="22.1.0">
+  <diagram name="Best Practices" id="best-practices">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="AWS API Gateway - Best Practices Overview" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- API Design -->
+        <mxCell id="design-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="design-title" value="API Design" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="design-icon" value="📐" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=40;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="design-list" value="✓ Use plural nouns: /customers&#xa;✓ Use HTTP methods correctly&#xa;✓ Version in URL path: /v1/...&#xa;✓ Consistent error format&#xa;✓ Pagination with cursors&#xa;✓ HATEOAS links in responses&#xa;✓ Use proper status codes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="130" y="130" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="design-tip" value="💡 Design for consumers, not implementation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Performance -->
+        <mxCell id="perf-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="390" y="80" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="perf-title" value="Performance" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="perf-icon" value="⚡" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=40;" vertex="1" parent="1">
+          <mxGeometry x="410" y="130" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="perf-list" value="✓ Use HTTP API (40ms vs 100ms)&#xa;✓ Enable caching for GET&#xa;✓ Compress responses (gzip)&#xa;✓ Use Provisioned Concurrency&#xa;✓ Minimize Lambda package size&#xa;✓ Connection pooling&#xa;✓ Regional endpoints if local" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="480" y="130" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="perf-tip" value="💡 HTTP API is 60% faster and 71% cheaper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="410" y="270" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Security -->
+        <mxCell id="security-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="740" y="80" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="security-title" value="Security" style="text;html=1;strokeColor=none;fillColor=#C2185B;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="security-icon" value="🔒" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=40;" vertex="1" parent="1">
+          <mxGeometry x="760" y="130" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="security-list" value="✓ Always use HTTPS (TLS 1.2+)&#xa;✓ Enable WAF for public APIs&#xa;✓ Use short-lived tokens&#xa;✓ Validate all inputs&#xa;✓ Implement rate limiting&#xa;✓ Mask sensitive data in logs&#xa;✓ Use least privilege IAM" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="830" y="130" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="security-tip" value="💡 API Keys are NOT for security - use auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;shadow=1;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="760" y="270" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Cost Optimization -->
+        <mxCell id="cost-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="350" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="cost-title" value="Cost Optimization" style="text;html=1;strokeColor=none;fillColor=#E65100;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cost-icon" value="💰" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=40;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cost-list" value="✓ HTTP API over REST API&#xa;✓ Use AWS Service integrations&#xa;✓ Right-size cache capacity&#xa;✓ Monitor cache hit rate&#xa;✓ Return only needed fields&#xa;✓ Set appropriate throttle limits&#xa;✓ Review CloudWatch costs" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="130" y="400" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cost-compare" value="REST: $3.50/M  →  HTTP: $1.00/M" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;shadow=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="540" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Error Handling -->
+        <mxCell id="error-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="390" y="350" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="error-title" value="Error Handling" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="error-icon" value="⚠️" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=40;" vertex="1" parent="1">
+          <mxGeometry x="410" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="error-list" value="✓ Consistent error format&#xa;✓ Include requestId in errors&#xa;✓ Customize Gateway responses&#xa;✓ Use appropriate status codes&#xa;✓ Add Retry-After for 429&#xa;✓ Log errors with context&#xa;✓ Don't expose stack traces" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="480" y="400" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="error-format" value="{error: {code, message, requestId}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#7b1fa2;shadow=1;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="410" y="540" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Operations -->
+        <mxCell id="ops-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="740" y="350" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-title" value="Operations" style="text;html=1;strokeColor=none;fillColor=#455A64;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-icon" value="🔧" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=40;" vertex="1" parent="1">
+          <mxGeometry x="760" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-list" value="✓ Infrastructure as Code (SAM/CDK)&#xa;✓ Enable X-Ray tracing&#xa;✓ Set up CloudWatch alarms&#xa;✓ Use canary deployments&#xa;✓ Implement CI/CD pipeline&#xa;✓ Create runbooks&#xa;✓ Test with realistic load" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="830" y="400" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-tip" value="💡 Automate everything - reduce human error" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfd8dc;strokeColor=#455a64;shadow=1;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="760" y="540" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Anti-patterns -->
+        <mxCell id="anti-title" value="Common Anti-Patterns to Avoid" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=16;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="400" y="620" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="anti-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="660" width="1020" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="anti1" value="✗ Using API Keys&#xa;   as auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="anti2" value="✗ Caching POST&#xa;   requests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="190" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="anti3" value="✗ Over-sized&#xa;   cache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="320" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="anti4" value="✗ Logging&#xa;   sensitive data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="450" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="anti5" value="✗ No request&#xa;   validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="580" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="anti6" value="✗ Manual&#xa;   deployments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="710" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="anti7" value="✗ No rate&#xa;   limiting" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="840" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Quick Reference -->
+        <mxCell id="ref-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="80" width="280" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-title" value="Quick Reference" style="text;html=1;strokeColor=none;fillColor=#3949AB;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="90" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ref-status" value="Status Codes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="130" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-status-list" value="200 OK - Success GET/PUT&#xa;201 Created - Success POST&#xa;204 No Content - DELETE&#xa;400 Bad Request&#xa;401 Unauthorized&#xa;403 Forbidden&#xa;404 Not Found&#xa;429 Too Many Requests&#xa;500 Internal Error" style="text;html=1;strokeColor=none;fillColor=#c5cae9;align=left;verticalAlign=top;fontSize=10;spacing=5;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="155" width="240" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ref-limits" value="Key Limits" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="305" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-limits-list" value="Payload: 10 MB&#xa;Timeout: 29-30 sec&#xa;URL: 8,192 bytes&#xa;Headers: 10,240 bytes&#xa;RPS: 10,000 default&#xa;WebSocket: 128 KB msg" style="text;html=1;strokeColor=none;fillColor=#c5cae9;align=left;verticalAlign=top;fontSize=10;spacing=5;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="330" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ref-choose" value="Choose API Type" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="440" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-choose-list" value="HTTP API → Default choice&#xa;REST API → Need VTL/cache&#xa;WebSocket → Real-time" style="text;html=1;strokeColor=none;fillColor=#c5cae9;align=left;verticalAlign=top;fontSize=10;spacing=5;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="465" width="240" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ref-motto" value="&quot;Simple, Secure, Scalable&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=3;fontSize=12;fontColor=#3949AB;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="540" width="240" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

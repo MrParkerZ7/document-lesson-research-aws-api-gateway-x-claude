@@ -26,7 +26,7 @@
         </mxCell>
 
         <!-- Step 2: Method Request -->
-        <mxCell id="step2" value="2. Method Request" style="swimlane;horizontal=1;startSize=25;fillColor=#fff3e0;strokeColor=#ff9800;rounded=1;shadow=1;" vertex="1" parent="1">
+        <mxCell id="step2" value="2. Method Request" style="swimlane;horizontal=1;startSize=25;fillColor=#fff3e0;strokeColor=#ff9800;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="120" width="160" height="180" as="geometry" />
         </mxCell>
         <mxCell id="step2a" value="Authorization&#xa;(IAM, Cognito, Lambda)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=10;" vertex="1" parent="step2">
@@ -40,7 +40,7 @@
         </mxCell>
 
         <!-- Step 3: Integration Request -->
-        <mxCell id="step3" value="3. Integration Request" style="swimlane;horizontal=1;startSize=25;fillColor=#e8f5e9;strokeColor=#43a047;rounded=1;shadow=1;" vertex="1" parent="1">
+        <mxCell id="step3" value="3. Integration Request" style="swimlane;horizontal=1;startSize=25;fillColor=#e8f5e9;strokeColor=#43a047;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="500" y="120" width="160" height="180" as="geometry" />
         </mxCell>
         <mxCell id="step3a" value="VTL Transformation&#xa;(map request)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#43a047;shadow=1;fontSize=10;" vertex="1" parent="step3">
@@ -64,7 +64,7 @@
         </mxCell>
 
         <!-- Step 4: Integration Response -->
-        <mxCell id="step4" value="4. Integration Response" style="swimlane;horizontal=1;startSize=25;fillColor=#fce4ec;strokeColor=#e91e63;rounded=1;shadow=1;" vertex="1" parent="1">
+        <mxCell id="step4" value="4. Integration Response" style="swimlane;horizontal=1;startSize=25;fillColor=#fce4ec;strokeColor=#e91e63;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="500" y="380" width="160" height="140" as="geometry" />
         </mxCell>
         <mxCell id="step4a" value="Response Mapping&#xa;(by status code)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#e91e63;shadow=1;fontSize=10;" vertex="1" parent="step4">
@@ -75,7 +75,7 @@
         </mxCell>
 
         <!-- Step 5: Method Response -->
-        <mxCell id="step5" value="5. Method Response" style="swimlane;horizontal=1;startSize=25;fillColor=#f3e5f5;strokeColor=#9c27b0;rounded=1;shadow=1;" vertex="1" parent="1">
+        <mxCell id="step5" value="5. Method Response" style="swimlane;horizontal=1;startSize=25;fillColor=#f3e5f5;strokeColor=#9c27b0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="380" width="160" height="140" as="geometry" />
         </mxCell>
         <mxCell id="step5a" value="VTL Transformation&#xa;(map response)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;shadow=1;fontSize=10;" vertex="1" parent="step5">
@@ -123,7 +123,7 @@
         </mxCell>
 
         <!-- API Gateway Box -->
-        <mxCell id="apigw-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#FF8C00;strokeWidth=3;dashed=1;" vertex="1" parent="1">
+        <mxCell id="apigw-box" value="" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=#FF8C00;strokeWidth=3;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="280" y="100" width="400" height="440" as="geometry" />
         </mxCell>
         <mxCell id="apigw-label" value="API Gateway" style="text;html=1;strokeColor=none;fillColor=#FFE4B5;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#FF8C00;rounded=1;" vertex="1" parent="1">
