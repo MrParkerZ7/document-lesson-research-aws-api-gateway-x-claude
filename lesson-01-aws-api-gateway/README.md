@@ -29,6 +29,7 @@ By the end of this lesson, you will be able to:
 | 07 | [Comparison with Alternatives](./07-comparison-alternatives/README.md) | vs ALB, Kong, Apigee, Azure API Management |
 | 08 | [Best Practices](./08-best-practices/README.md) | Design patterns, performance optimization, cost management |
 | 09 | [Limitations & Considerations](./09-limitations-considerations/README.md) | What API Gateway doesn't support and workarounds |
+| 10 | [Resource Mapping](./10-resource-mapping/README.md) | Deep dive into resource types, Lambda, ALB, VPC Links, path variables |
 
 ## Quick Reference
 

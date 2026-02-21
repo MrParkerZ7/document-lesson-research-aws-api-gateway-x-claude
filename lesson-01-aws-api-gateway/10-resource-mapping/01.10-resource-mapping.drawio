@@ -1,0 +1,339 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:00:00.000Z" agent="Claude" version="22.1.0">
+  <diagram name="Resource Mapping" id="resource-mapping">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="API Gateway Resource Mapping - Deep Dive" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="450" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Path Structure -->
+        <mxCell id="path-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="path-title" value="Resource Path Structure" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="90" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="path-root" value="/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="path-root-desc" value="Root resource" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="130" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="path-static" value="/users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="path-static-desc" value="Static path" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="160" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="path-var" value="/users/{userId}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="60" y="190" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="path-var-desc" value="Path variable" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="190" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="path-greedy" value="/api/{proxy+}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff9800;shadow=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="path-greedy-desc" value="Greedy (catch-all)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="220" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="path-nested" value="/users/{id}/orders" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=11;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="path-nested-desc" value="Nested path" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="210" y="250" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Integration Types -->
+        <mxCell id="int-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="420" y="80" width="400" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="int-title" value="Integration Types" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="int-lambda-proxy" value="Lambda Proxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="130" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="int-lambda-proxy-tag" value="REST + HTTP" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#2e7d32;" vertex="1" parent="1">
+          <mxGeometry x="440" y="160" width="110" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="int-lambda-custom" value="Lambda Custom" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="570" y="130" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="int-lambda-custom-tag" value="REST only" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="570" y="160" width="110" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="int-http" value="HTTP Proxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="130" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="int-http-tag" value="REST + HTTP" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#2e7d32;" vertex="1" parent="1">
+          <mxGeometry x="700" y="160" width="100" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="int-aws" value="AWS Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff9800;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="185" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="int-aws-tag" value="REST only" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="440" y="215" width="110" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="int-vpc" value="VPC Link" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="185" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="int-vpc-tag" value="REST + HTTP" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#2e7d32;" vertex="1" parent="1">
+          <mxGeometry x="570" y="215" width="110" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="int-mock" value="Mock" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfd8dc;strokeColor=#607d8b;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="700" y="185" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="int-mock-tag" value="REST only" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#e65100;" vertex="1" parent="1">
+          <mxGeometry x="700" y="215" width="100" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="int-alb" value="Private (ALB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="570" y="240" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="int-alb-tag" value="HTTP only" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#1565c0;" vertex="1" parent="1">
+          <mxGeometry x="570" y="270" width="110" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway Central -->
+        <mxCell id="apigw" value="API Gateway" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#FF9900;strokeColor=#232F3E;shadow=1;fontStyle=1;fontColor=#ffffff;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="860" y="130" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow to API Gateway -->
+        <mxCell id="arr-int-apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2e7d32;curved=1;flowAnimation=1;" edge="1" parent="1" source="int-box" target="apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Lambda Integration Flow -->
+        <mxCell id="lambda-flow-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="500" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda-flow-title" value="Lambda Proxy Integration Flow" style="text;html=1;strokeColor=none;fillColor=#E65100;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="320" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lf-client" value="Client" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="40" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lf-apigw" value="API&#xa;Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff9800;shadow=1;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="390" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lf-lambda" value="Lambda" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="390" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lf-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="lf-client" target="lf-apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lf-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff9800;curved=1;flowAnimation=1;" edge="1" parent="1" source="lf-apigw" target="lf-lambda">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Lambda Request Format -->
+        <mxCell id="lf-request" value="Request Event:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="330" y="360" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lf-req-content" value="{&#xa;  &quot;path&quot;: &quot;/users/123&quot;,&#xa;  &quot;pathParameters&quot;: {&#xa;    &quot;userId&quot;: &quot;123&quot;&#xa;  },&#xa;  &quot;httpMethod&quot;: &quot;GET&quot;,&#xa;  &quot;headers&quot;: {...},&#xa;  &quot;body&quot;: null&#xa;}" style="text;html=1;strokeColor=#e65100;fillColor=#ffe0b2;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;spacing=5;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="380" width="190" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Lambda Response Format -->
+        <mxCell id="lf-response" value="Response Format:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="460" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lf-res-content" value="{&#xa;  &quot;statusCode&quot;: 200,&#xa;  &quot;headers&quot;: {&#xa;    &quot;Content-Type&quot;: &quot;application/json&quot;&#xa;  },&#xa;  &quot;body&quot;: &quot;{\&quot;userId\&quot;: \&quot;123\&quot;}&quot;&#xa;}" style="text;html=1;strokeColor=#2e7d32;fillColor=#c8e6c9;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;spacing=5;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="250" height="95" as="geometry" />
+        </mxCell>
+
+        <!-- VPC Link Flow -->
+        <mxCell id="vpc-flow-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="310" width="480" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc-flow-title" value="VPC Link Integration" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="320" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-internet" value="Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="370" width="70" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-apigw" value="API&#xa;Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff9800;shadow=1;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="375" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-vpclink" value="VPC Link" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="375" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-vpc" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+          <mxGeometry x="870" y="360" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vf-vpc-label" value="VPC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=10;fontColor=#7b1fa2;" vertex="1" parent="1">
+          <mxGeometry x="930" y="365" width="40" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-nlb" value="NLB" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="885" y="385" width="50" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-alb" value="ALB" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;shadow=1;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="885" y="420" width="50" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-ecs" value="ECS/EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="955" y="395" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;curved=1;flowAnimation=1;" edge="1" parent="1" source="vf-internet" target="vf-apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vf-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff9800;curved=1;flowAnimation=1;" edge="1" parent="1" source="vf-apigw" target="vf-vpclink">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vf-arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#9c27b0;curved=1;flowAnimation=1;" edge="1" parent="1" source="vf-vpclink" target="vf-nlb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vf-arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#c2185b;curved=1;dashed=1;" edge="1" parent="1" source="vf-vpclink" target="vf-alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vf-arr5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6c8ebf;curved=1;flowAnimation=1;" edge="1" parent="1" source="vf-nlb" target="vf-ecs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vf-note1" value="REST API: NLB only" style="text;html=1;strokeColor=none;fillColor=#bbdefb;align=center;verticalAlign=middle;fontSize=9;rounded=1;strokeColor=#1565c0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="480" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="vf-note2" value="HTTP API: NLB, ALB, Cloud Map" style="text;html=1;strokeColor=none;fillColor=#f8bbd0;align=center;verticalAlign=middle;fontSize=9;rounded=1;strokeColor=#c2185b;" vertex="1" parent="1">
+          <mxGeometry x="590" y="505" width="170" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Path Variable Mapping -->
+        <mxCell id="mapping-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="470" width="480" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="mapping-title" value="Path Variable Mapping Example" style="text;html=1;strokeColor=none;fillColor=#455A64;align=center;verticalAlign=middle;fontStyle=1;fontSize=13;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="480" width="220" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mapping-example" value="API Path:      /services/{serviceName}/resource/{resourceId}&#xa;Backend URL:   http://internal/{serviceName}/api/{resourceId}&#xa;&#xa;requestParameters:&#xa;  integration.request.path.serviceName: method.request.path.serviceName&#xa;  integration.request.path.resourceId: method.request.path.resourceId" style="text;html=1;strokeColor=none;fillColor=#cfd8dc;align=left;verticalAlign=top;fontSize=10;fontFamily=Courier New;spacing=5;rounded=1;strokeColor=#455a64;" vertex="1" parent="1">
+          <mxGeometry x="590" y="510" width="440" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Service Integration -->
+        <mxCell id="aws-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FF8F00;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="500" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="aws-title" value="AWS Service Direct Integration (No Lambda)" style="text;html=1;strokeColor=none;fillColor=#FF8F00;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="630" width="340" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aws-dynamodb" value="DynamoDB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff8f00;shadow=1;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="680" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="aws-dynamodb-ops" value="GetItem, PutItem,&#xa;Query, Scan" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="60" y="715" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aws-s3" value="S3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="680" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="aws-s3-ops" value="GetObject,&#xa;PutObject" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="180" y="715" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aws-sqs" value="SQS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="300" y="680" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="aws-sqs-ops" value="SendMessage,&#xa;ReceiveMessage" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="300" y="715" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aws-step" value="Step Functions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="680" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="aws-step-ops" value="StartExecution,&#xa;DescribeExecution" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="420" y="715" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aws-note" value="Requires VTL templates for request/response transformation" style="text;html=1;strokeColor=none;fillColor=#fff9c4;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;rounded=1;strokeColor=#f9a825;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="460" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aws-benefit" value="Benefit: Lower latency + cost (no Lambda execution)" style="text;html=1;strokeColor=none;fillColor=#c8e6c9;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;rounded=1;strokeColor=#2e7d32;" vertex="1" parent="1">
+          <mxGeometry x="60" y="790" width="460" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Stage Variables -->
+        <mxCell id="stage-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3949AB;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="620" width="480" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="stage-title" value="Stage Variables in Resource Mapping" style="text;html=1;strokeColor=none;fillColor=#3949AB;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="630" width="260" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stage-lambda" value="Lambda Alias:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="590" y="670" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="stage-lambda-ex" value="arn:aws:lambda:...:MyFunction:${stageVariables.lambdaAlias}" style="text;html=1;strokeColor=none;fillColor=#c5cae9;align=left;verticalAlign=middle;fontSize=9;fontFamily=Courier New;rounded=1;strokeColor=#3949ab;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="590" y="690" width="440" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stage-backend" value="Backend URL:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="590" y="725" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="stage-backend-ex" value="https://${stageVariables.backendHost}/api" style="text;html=1;strokeColor=none;fillColor=#c5cae9;align=left;verticalAlign=middle;fontSize=9;fontFamily=Courier New;rounded=1;strokeColor=#3949ab;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="590" y="745" width="280" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stage-table" value="dev:  lambdaAlias=dev, backendHost=dev-api.example.com&#xa;prod: lambdaAlias=prod, backendHost=api.example.com" style="text;html=1;strokeColor=none;fillColor=#e8eaf6;align=left;verticalAlign=top;fontSize=10;fontFamily=Courier New;rounded=1;strokeColor=#3949ab;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="590" y="780" width="440" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#666;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="80" width="180" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="Legend" style="text;html=1;strokeColor=none;fillColor=#666;align=center;verticalAlign=middle;fontStyle=1;fontSize=12;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="90" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="REST + HTTP API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="125" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="REST API only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="150" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="HTTP API only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="175" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="Path Variable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="200" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" value="Greedy Path" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff9800;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="225" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" value="VPC Resource" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="250" width="150" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
