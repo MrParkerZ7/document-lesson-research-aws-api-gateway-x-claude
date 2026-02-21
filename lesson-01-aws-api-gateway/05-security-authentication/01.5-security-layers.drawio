@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:00:00.000Z" agent="Claude" version="22.1.0">
+  <diagram name="Security Layers" id="security-layers">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="800" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="API Gateway Security Layers (Defense in Depth)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Attacker -->
+        <mxCell id="attacker" value="Internet&#xa;Traffic" style="shape=mxgraph.basic.cloud_callout;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#cc0000;shadow=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 1: Edge Protection -->
+        <mxCell id="layer1" value="Layer 1: Edge Protection" style="swimlane;horizontal=1;startSize=30;fillColor=#FFEBEE;strokeColor=#C62828;rounded=1;shadow=1;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="180" y="100" width="200" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="waf" value="AWS WAF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontStyle=1;" vertex="1" parent="layer1">
+          <mxGeometry x="30" y="50" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="waf-rules" value="• SQL Injection&#xa;• XSS Protection&#xa;• Rate Limiting&#xa;• Geo Blocking&#xa;• IP Reputation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#c62828;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer1">
+          <mxGeometry x="30" y="100" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="shield" value="AWS Shield" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontStyle=1;" vertex="1" parent="layer1">
+          <mxGeometry x="30" y="210" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="shield-desc" value="• DDoS Protection&#xa;• Automatic mitigation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#c62828;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer1">
+          <mxGeometry x="30" y="260" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cf" value="CloudFront (Edge)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;shadow=1;fontStyle=1;" vertex="1" parent="layer1">
+          <mxGeometry x="30" y="330" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-desc" value="• Edge caching&#xa;• SSL termination&#xa;• Origin shield" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#c62828;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer1">
+          <mxGeometry x="30" y="380" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 2: Network -->
+        <mxCell id="layer2" value="Layer 2: Network Security" style="swimlane;horizontal=1;startSize=30;fillColor=#FFF3E0;strokeColor=#E65100;rounded=1;shadow=1;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="410" y="100" width="200" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="tls" value="TLS 1.2+ Encryption" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;shadow=1;fontStyle=1;" vertex="1" parent="layer2">
+          <mxGeometry x="30" y="50" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tls-desc" value="• In-transit encryption&#xa;• Certificate management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer2">
+          <mxGeometry x="30" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mtls" value="Mutual TLS (mTLS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;shadow=1;fontStyle=1;" vertex="1" parent="layer2">
+          <mxGeometry x="30" y="170" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mtls-desc" value="• Client certificates&#xa;• B2B authentication&#xa;• Truststore validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer2">
+          <mxGeometry x="30" y="220" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="private" value="Private APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;shadow=1;fontStyle=1;" vertex="1" parent="layer2">
+          <mxGeometry x="30" y="300" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="private-desc" value="• VPC endpoints only&#xa;• No public access&#xa;• Internal services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer2">
+          <mxGeometry x="30" y="350" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 3: Authentication -->
+        <mxCell id="layer3" value="Layer 3: Authentication" style="swimlane;horizontal=1;startSize=30;fillColor=#E8F5E9;strokeColor=#2E7D32;rounded=1;shadow=1;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="200" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="iam-auth" value="IAM Authentication" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontStyle=1;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="50" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="iam-desc" value="• AWS SigV4 signing&#xa;• Service-to-service&#xa;• Cross-account" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="100" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cognito" value="Cognito User Pools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontStyle=1;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="170" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cognito-desc" value="• User authentication&#xa;• JWT tokens&#xa;• Social/SAML/OIDC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="220" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda-auth" value="Lambda Authorizer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontStyle=1;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="290" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda-auth-desc" value="• Custom auth logic&#xa;• External providers&#xa;• Token validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="340" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="jwt" value="JWT Authorizer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontStyle=1;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="410" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="jwt-desc" value="• HTTP API native&#xa;• OIDC/OAuth 2.0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer3">
+          <mxGeometry x="30" y="450" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 4: Authorization -->
+        <mxCell id="layer4" value="Layer 4: Authorization" style="swimlane;horizontal=1;startSize=30;fillColor=#E3F2FD;strokeColor=#1565C0;rounded=1;shadow=1;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="870" y="100" width="200" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="iam-policy" value="IAM Policies" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontStyle=1;" vertex="1" parent="layer4">
+          <mxGeometry x="30" y="50" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="iam-policy-desc" value="• Fine-grained access&#xa;• Resource-level&#xa;• Condition keys" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer4">
+          <mxGeometry x="30" y="100" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="resource-policy" value="Resource Policies" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontStyle=1;" vertex="1" parent="layer4">
+          <mxGeometry x="30" y="170" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="resource-desc" value="• API-level access&#xa;• Cross-account&#xa;• VPC restrictions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer4">
+          <mxGeometry x="30" y="220" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="scopes" value="OAuth Scopes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontStyle=1;" vertex="1" parent="layer4">
+          <mxGeometry x="30" y="290" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="scopes-desc" value="• Read/Write scopes&#xa;• Per-method authz&#xa;• Claim validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer4">
+          <mxGeometry x="30" y="340" width="140" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 5: Rate Limiting -->
+        <mxCell id="layer5" value="Layer 5: Rate Limiting" style="swimlane;horizontal=1;startSize=30;fillColor=#F3E5F5;strokeColor=#7B1FA2;rounded=1;shadow=1;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="100" width="200" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="throttle" value="Throttling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#7b1fa2;shadow=1;fontStyle=1;" vertex="1" parent="layer5">
+          <mxGeometry x="30" y="50" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="throttle-desc" value="• Account limit&#xa;• Stage limit&#xa;• Method limit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer5">
+          <mxGeometry x="30" y="100" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="apikeys" value="API Keys" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#7b1fa2;shadow=1;fontStyle=1;" vertex="1" parent="layer5">
+          <mxGeometry x="30" y="170" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="apikeys-desc" value="• Client identification&#xa;• Usage tracking&#xa;• NOT for security" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer5">
+          <mxGeometry x="30" y="220" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="usage" value="Usage Plans" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#7b1fa2;shadow=1;fontStyle=1;" vertex="1" parent="layer5">
+          <mxGeometry x="30" y="290" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="usage-desc" value="• Quotas (daily/monthly)&#xa;• Per-key limits&#xa;• Partner tiers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;align=left;spacingLeft=10;fontSize=10;" vertex="1" parent="layer5">
+          <mxGeometry x="30" y="340" width="140" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Backend -->
+        <mxCell id="backend" value="Backend&#xa;(Protected)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="330" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Flow arrow -->
+        <mxCell id="flow" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeWidth=2;fillColor=#FF9900;strokeColor=#232F3E;shadow=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="340" as="sourcePoint" />
+            <mxPoint x="1320" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Flow label -->
+        <mxCell id="flow-label" value="Request must pass ALL layers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="660" width="200" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

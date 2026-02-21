@@ -1,0 +1,191 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:00:00.000Z" agent="Claude" version="22.1.0">
+  <diagram name="Comparison Matrix" id="comparison-matrix">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="800" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="API Gateway vs Alternatives - When to Use What" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="apigw-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FF8F00;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="250" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-title" value="AWS API Gateway" style="text;html=1;strokeColor=none;fillColor=#FF8F00;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="65" y="90" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-best" value="Best For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="55" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-list" value="✓ Serverless (Lambda) backends&#xa;✓ AWS-native applications&#xa;✓ REST APIs with transformations&#xa;✓ WebSocket real-time apps&#xa;✓ Quick deployment&#xa;✓ Pay-per-request pricing" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="150" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-not" value="Not Ideal For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="55" y="270" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw-not-list" value="✗ gRPC services&#xa;✗ GraphQL (use AppSync)&#xa;✗ Very high throughput&#xa;✗ Multi-cloud deployment" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="55" y="290" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ALB -->
+        <mxCell id="alb-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="250" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-title" value="Application Load Balancer" style="text;html=1;strokeColor=none;fillColor=#1565C0;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="90" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-best" value="Best For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="335" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-list" value="✓ Container backends (ECS/EKS)&#xa;✓ High throughput, low latency&#xa;✓ gRPC services&#xa;✓ Long-running connections&#xa;✓ Cost-effective at scale&#xa;✓ HTTP/2 end-to-end" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="335" y="150" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-not" value="Not Ideal For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="335" y="270" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="alb-not-list" value="✗ API management features&#xa;✗ Request transformation&#xa;✗ API keys / usage plans&#xa;✗ Built-in caching" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="335" y="290" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- AppSync -->
+        <mxCell id="appsync-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="250" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="appsync-title" value="AWS AppSync" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="625" y="90" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="appsync-best" value="Best For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="615" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="appsync-list" value="✓ GraphQL APIs&#xa;✓ Real-time subscriptions&#xa;✓ Complex data aggregation&#xa;✓ Offline-first mobile apps&#xa;✓ Direct DynamoDB resolvers&#xa;✓ Amplify integration" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="615" y="150" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="appsync-not" value="Not Ideal For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="615" y="270" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="appsync-not-list" value="✗ REST APIs&#xa;✗ File uploads/downloads&#xa;✗ Third-party API exposure&#xa;✗ Simple CRUD APIs" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="615" y="290" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Kong/Third-Party -->
+        <mxCell id="kong-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;shadow=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="880" y="80" width="250" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="kong-title" value="Kong / Apigee / Others" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="905" y="90" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kong-best" value="Best For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="895" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kong-list" value="✓ Multi-cloud / hybrid cloud&#xa;✓ Developer portal needed&#xa;✓ API monetization&#xa;✓ Extensive customization&#xa;✓ Service mesh capabilities&#xa;✓ Advanced traffic mgmt" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="895" y="150" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="kong-not" value="Not Ideal For:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="895" y="270" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kong-not-list" value="✗ Quick AWS-native setup&#xa;✗ Minimal ops overhead&#xa;✗ Simple serverless apps&#xa;✗ Budget constraints" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;spacing=5;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="895" y="290" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Decision Tree -->
+        <mxCell id="decision-title" value="Quick Decision Tree" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=16;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="500" y="410" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=#232F3E;fontColor=#ffffff;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q1" value="GraphQL?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="465" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q2" value="gRPC?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="465" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q3" value="Multi-cloud?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="465" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q4" value="High perf&#xa;containers?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="465" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q5" value="Complex&#xa;transforms?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="465" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Results -->
+        <mxCell id="r-appsync" value="AppSync" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;shadow=1;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="580" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="r-alb" value="ALB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="580" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="r-kong" value="Kong/Apigee" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#7b1fa2;shadow=1;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="580" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="r-alb2" value="ALB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;shadow=1;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="555" y="580" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="r-rest" value="REST API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff8f00;shadow=1;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="695" y="580" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="r-http" value="HTTP API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#ff8f00;shadow=1;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="465" width="80" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="start" target="q1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2e7d32;" edge="1" parent="1" source="q1" target="r-appsync">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q1" target="q2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#1565c0;" edge="1" parent="1" source="q2" target="r-alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q2" target="q3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7b1fa2;" edge="1" parent="1" source="q3" target="r-kong">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q3" target="q4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#1565c0;" edge="1" parent="1" source="q4" target="r-alb2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#666;" edge="1" parent="1" source="q4" target="q5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a10" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff8f00;" edge="1" parent="1" source="q5" target="r-rest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a11" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#ff8f00;" edge="1" parent="1" source="q5" target="r-http">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Cost comparison -->
+        <mxCell id="cost-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#666;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="450" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="cost-title" value="Cost Comparison (per M req)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="970" y="455" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cost-list" value="HTTP API:     $1.00 ✓ Lowest&#xa;REST API:     $3.50&#xa;ALB:          ~$0.50* (at scale)&#xa;AppSync:      $4.00&#xa;Kong Cloud:   $5.00+&#xa;Apigee:       Enterprise $$$" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontFamily=Courier New;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="960" y="480" width="180" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
